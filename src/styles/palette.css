@@ -1,0 +1,85 @@
+/* Command palette (Ctrl/Cmd + K). */
+
+.palette-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 180;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 12vh 1rem 1rem;
+  background: rgba(8, 10, 9, 0.8);
+}
+
+.palette {
+  width: min(36rem, 100%);
+  max-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--green);
+}
+
+.palette__input {
+  width: 100%;
+  min-height: 3rem;
+  padding: 0.6rem 0.9rem;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+  font: inherit;
+  font-size: 1rem; /* 16px: stops iOS zooming into the field */
+  border-radius: 0;
+}
+
+.palette__input:focus-visible {
+  outline: none;
+  border-bottom-color: var(--green-bright);
+}
+
+.palette__list {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.palette__group {
+  padding: 0.6rem 0.9rem 0.2rem;
+  color: var(--dim);
+  font-size: 0.8rem;
+}
+
+.palette__option {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0 1rem;
+  padding: 0.5rem 0.9rem;
+  cursor: pointer;
+  overflow-wrap: anywhere;
+}
+
+.palette__option.is-active {
+  background: var(--green);
+  color: var(--bg);
+}
+
+.palette__hint {
+  color: var(--dim);
+  font-size: 0.85rem;
+}
+
+.palette__option.is-active .palette__hint {
+  color: var(--bg);
+}
+
+.palette__empty {
+  padding: 1rem 0.9rem;
+  color: var(--text);
+}
+
+.palette__help {
+  padding: 0.5rem 0.9rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.8rem;
+}

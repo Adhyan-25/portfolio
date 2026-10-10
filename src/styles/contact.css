@@ -1,0 +1,40 @@
+/* Contact: one large email action, then phone, social buttons and resume. */
+
+.contact__lead {
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  line-height: 1.5;
+}
+
+.contact__primary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem 1rem;
+  margin: 0.9rem 0 1.25rem;
+}
+
+.contact__email {
+  font-family: var(--serif);
+  font-size: clamp(1.25rem, 5vw, 2rem);
+  line-height: 1.2;
+  color: var(--green-bright);
+  overflow-wrap: anywhere;
+}
+
+.contact__phone {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem 0.75rem;
+  padding: 0.9rem 0;
+  border-top: 1px dotted var(--border);
+  border-bottom: 1px dotted var(--border);
+}
+
+.contact__social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1.5rem;
+}

@@ -1,0 +1,36 @@
+/* Design tokens: colours and fonts. Theme variants are defined at the bottom. */
+
+:root {
+  --bg: #0f1311;
+  --surface: #141a17;
+  --surface-2: #1a221e;
+  --border: #2a352f;
+  --text: #e6e2d6;
+  --dim: #9ba59e;
+  --green: #86b894;
+  --green-bright: #b0d9b9;
+  --warn: #dba873;
+  --focus: #b0d9b9;
+  --accent-2: #c9ab76; /* muted brass: used sparingly (drop cap, serif labels) */
+  --serif: 'Iowan Old Style', 'Palatino Linotype', Palatino, 'Book Antiqua', Georgia, 'Times New Roman', serif;
+  --mono: ui-monospace, 'SF Mono', 'Cascadia Mono', 'JetBrains Mono', Menlo, Consolas, 'Liberation Mono', monospace;
+  --header-h: 3.5rem;
+  color-scheme: dark;
+}
+
+/* ---- theme variants (ids must match src/data/themes.js) ---- */
+:root[data-theme='amber'] {
+  --green: #d4a95f;
+  --green-bright: #f2cf8e;
+  --focus: #f2cf8e;
+  --accent-2: #a9c7a3;
+  --warn: #e08f8f;
+}
+
+:root[data-theme='mono'] {
+  --green: #b9b4a6;
+  --green-bright: #f1ede2;
+  --focus: #f1ede2;
+  --accent-2: #d6d0c0;
+  --warn: #e0a07a;
+}

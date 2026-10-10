@@ -1,0 +1,52 @@
+/* Footer and toast message. */
+
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 1.5rem 0 2.5rem;
+  color: var(--dim);
+  font-size: 0.85rem;
+}
+
+.site-footer__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+}
+
+.site-footer__row + .site-footer__row {
+  margin-top: 1rem;
+}
+
+.theme-switcher {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 1rem;
+  z-index: 150;
+  width: max-content;
+  max-width: calc(100vw - 2rem);
+  transform: translateX(-50%);
+  padding: 0.7rem 1rem;
+  background: var(--surface-2);
+  border: 1px solid var(--green);
+}
+
+.toast:empty {
+  display: none;
+}
+
+.site-footer__signoff {
+  margin-bottom: 1.25rem;
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  font-style: italic;
+  color: var(--text);
+}

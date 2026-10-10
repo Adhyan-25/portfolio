@@ -1,0 +1,24 @@
+/* Touch devices: bigger tap targets, and hide keyboard-only hints. */
+
+@media (pointer: coarse) {
+  .chip,
+  .tag--button {
+    min-height: 2.75rem;
+    padding: 0.2rem 0.9rem;
+  }
+
+  .btn,
+  .btn--small {
+    min-height: 2.75rem;
+  }
+
+  .social__link {
+    min-width: 2.75rem;
+    min-height: 2.75rem;
+  }
+
+  .t-hint,
+  .site-footer__hint {
+    display: none;
+  }
+}

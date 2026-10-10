@@ -1,0 +1,96 @@
+/* Small shared pieces: buttons, chips, tags and badges. */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 2.5rem;
+  padding: 0.4rem 0.9rem;
+  background: var(--surface-2);
+  border: 1px solid var(--green);
+  color: var(--green-bright);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: var(--green);
+  color: var(--bg);
+}
+
+.btn--small {
+  min-height: 2.25rem;
+  padding: 0.25rem 0.7rem;
+  font-size: 0.85rem;
+}
+
+.btn--ghost {
+  background: transparent;
+  border-color: var(--border);
+  color: var(--text);
+}
+
+.chip {
+  min-height: 2rem;
+  padding: 0.15rem 0.7rem;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--green-bright);
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.chip:hover,
+.chip[aria-pressed='true'] {
+  border-color: var(--green);
+  background: var(--surface-2);
+}
+
+.chip[aria-pressed='true'] {
+  color: var(--text);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  padding: 0.1rem 0.6rem;
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-size: 0.85rem;
+  cursor: default;
+  transition: background-color 0.12s, color 0.12s, border-color 0.12s;
+}
+
+.tag__note {
+  color: var(--dim);
+}
+
+/* Looks like text selected in a terminal: inverted colours. */
+.tag:hover,
+.tag:active {
+  background: var(--green);
+  border-color: var(--green);
+  color: var(--bg);
+}
+
+.tag:hover .tag__note,
+.tag:active .tag__note {
+  color: var(--bg);
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.05rem 0.6rem;
+  border: 1px solid var(--green);
+  color: var(--green-bright);
+  font-size: 0.8rem;
+}
+
+.badge--small {
+  font-size: 0.75rem;
+  margin-left: 0.6rem;
+}

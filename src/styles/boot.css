@@ -1,0 +1,55 @@
+/* Loading page shown on first visit. */
+
+.boot {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: var(--bg);
+}
+
+.boot__panel {
+  width: min(24rem, 100%);
+}
+
+.boot__title {
+  font-weight: 700;
+  color: var(--green-bright);
+}
+
+.boot__version {
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.boot__steps {
+  min-height: 5.5rem;
+}
+
+.boot__status {
+  color: var(--green);
+}
+
+.boot__status--wait {
+  color: var(--dim);
+}
+
+.boot__bar {
+  height: 0.6rem;
+  margin: 1rem 0 0.5rem;
+  border: 1px solid var(--green);
+}
+
+.boot__fill {
+  height: 100%;
+  background: var(--green);
+  transition: width 0.3s ease;
+}
+
+.boot__hint {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+}

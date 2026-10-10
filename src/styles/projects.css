@@ -1,0 +1,302 @@
+/* Project explorer, detail view, architecture diagram and autocomplete demo. */
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.explorer {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.explorer__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.explorer__item {
+  display: flex;
+  flex-direction: column;
+  padding: 0.6rem 0.8rem;
+  text-align: left;
+  background: transparent;
+  border: 1px solid var(--border);
+  cursor: pointer;
+}
+
+.explorer__item[aria-current='true'] {
+  border-color: var(--green);
+  background: var(--bg);
+}
+
+.explorer__detail {
+  min-width: 0;
+}
+
+.project__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem 1rem;
+  margin-bottom: 0.9rem;
+}
+
+.project__title {
+  font-family: var(--serif);
+  font-size: 1.6rem;
+  line-height: 1.25;
+}
+
+.project__subtitle {
+  display: block;
+  margin-top: 0.2rem;
+  font-family: var(--mono);
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--dim);
+}
+
+.project__disclaimer {
+  margin-top: 0.9rem;
+  padding: 0.6rem 0.9rem;
+  max-width: 68ch;
+  border-left: 2px solid var(--warn);
+  background: var(--bg);
+  color: var(--text);
+}
+
+.project__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.features {
+  border-top: 1px solid var(--border);
+}
+
+.feature {
+  border-bottom: 1px solid var(--border);
+}
+
+.feature summary {
+  padding: 0.8rem 0;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.feature__body {
+  display: grid;
+  gap: 0.9rem;
+  padding: 0 0 1.1rem 0.9rem;
+  border-left: 1px solid var(--green);
+  max-width: 70ch;
+}
+
+.feature__body dt {
+  color: var(--green-bright);
+  font-size: 0.85rem;
+}
+
+/* architecture diagram */
+.arch {
+  margin-top: 2rem;
+  padding: 1.1rem;
+  border: 1px solid var(--border);
+  background: var(--bg);
+}
+
+.arch__title {
+  font-size: 1.05rem;
+}
+
+.arch__flow {
+  display: grid;
+  gap: 0.25rem;
+  margin: 1.1rem 0 0.9rem;
+}
+
+.arch__via {
+  margin: 0.25rem 0;
+  color: var(--green);
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.arch__nodes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.arch__node {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 11rem;
+  min-width: 0;
+  max-width: 20rem;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid var(--green);
+  background: var(--bg);
+  overflow-wrap: anywhere;
+}
+
+.arch__node span {
+  color: var(--dim);
+  font-size: 0.85rem;
+}
+
+.arch__layer--async .arch__node,
+.arch__layer--async .arch__via {
+  border-style: dashed;
+}
+
+.arch__layer--async .arch__via {
+  border: 0;
+}
+
+.arch__note {
+  padding: 0.5rem 0.8rem;
+  border-left: 2px solid var(--warn);
+}
+
+.arch__legend {
+  font-size: 0.8rem;
+  margin-bottom: 0.6rem;
+}
+
+.arch__sub {
+  margin: 1.25rem 0 0.5rem;
+  font-size: 0.95rem;
+  color: var(--green-bright);
+}
+
+.arch__components {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.arch__components dt {
+  font-weight: 600;
+}
+
+.arch__components dd {
+  color: var(--dim);
+  max-width: 70ch;
+}
+
+/* autocomplete demo */
+.demo {
+  margin-top: 2rem;
+  padding: 1.1rem;
+  border: 1px solid var(--border);
+}
+
+.demo__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1rem;
+  margin-bottom: 0.7rem;
+}
+
+.demo__title {
+  font-size: 1.05rem;
+}
+
+.demo__label {
+  display: block;
+  margin: 1rem 0 0.35rem;
+  font-size: 0.85rem;
+  color: var(--green-bright);
+}
+
+.demo__box {
+  position: relative;
+  max-width: 28rem;
+}
+
+.demo__input {
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0.4rem 0.7rem;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font: inherit;
+  font-size: 1rem;
+  border-radius: 0;
+}
+
+.demo__list {
+  position: absolute;
+  z-index: 10;
+  left: 0;
+  right: 0;
+  margin-top: 2px;
+  background: var(--surface-2);
+  border: 1px solid var(--green);
+  max-height: 16rem;
+  overflow-y: auto;
+}
+
+.demo__option {
+  padding: 0.5rem 0.7rem;
+  cursor: pointer;
+}
+
+.demo__option.is-active,
+.demo__option:hover {
+  background: var(--border);
+}
+
+.demo__option mark {
+  background: transparent;
+  color: var(--green-bright);
+  font-weight: 700;
+}
+
+.demo__empty {
+  margin-top: 0.5rem;
+  padding: 0.5rem 0.7rem;
+  border: 1px dashed var(--warn);
+  color: var(--text);
+}
+
+.demo__chosen {
+  margin-top: 0.9rem;
+}
+
+.project__highlight {
+  margin-top: 0.9rem;
+  padding: 0.6rem 0.9rem;
+  max-width: 68ch;
+  border-left: 2px solid var(--green);
+  background: var(--bg);
+}
+
+.project__notes {
+  margin-top: 1.25rem;
+  max-width: 68ch;
+  color: var(--dim);
+}
+
+.steps {
+  list-style: decimal;
+  padding-left: 1.5rem;
+  max-width: 68ch;
+}
+
+.steps li + li {
+  margin-top: 0.35rem;
+}
+
+.feature--simple {
+  padding: 0.75rem 0;
+}
